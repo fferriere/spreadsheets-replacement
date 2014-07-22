@@ -1,0 +1,14 @@
+{
+    "name": "fferriere/spreadsheets-replacement",
+    "description": "Make script for easy replacement in spreadsheets",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "FERRIERE Florian",
+            "email": "ferriere.florian@gmail.com"
+        }
+    ],
+    "require": {
+        
+    }
+}
