@@ -32,7 +32,7 @@ interface IColumn {
 
     /**
      * Returns list of actions for this column.
-     * @return \Iterator the list of IAction
+     * @return \IteratorAggregate the list of IAction
      */
     public function getActions();
 
