@@ -8,8 +8,15 @@ use SpreadsheetsReplacement\Action\IAction;
 class Column implements IColumn {
 
     private $name;
+
     private $source;
+
     private $destination;
+
+    /**
+     * List of actions.
+     * @var PriorityQueue
+     */
     private $actions;
 
     public function __construct($name, $source, $destination) {
