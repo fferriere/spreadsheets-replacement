@@ -19,7 +19,7 @@ class Column implements IColumn {
      */
     private $actions;
 
-    public function __construct($name = null, $source = null, $destination = null) {
+    public function __construct($source = null, $destination = null, $name = null) {
         $this->name = $name;
         $this->source = $source;
         $this->destination = $destination;
@@ -30,6 +30,9 @@ class Column implements IColumn {
      * {@inheritDoc}
      */
     public function getName() {
+        if(!$this->name) {
+            $this->name = $this->source;
+        }
         return $this->name;
     }
 
