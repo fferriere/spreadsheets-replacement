@@ -9,9 +9,14 @@ namespace SpreadsheetsReplacement\Action;
  */
 class Concat extends Action {
 
-    private $start = '';
+    private $start;
 
-    private $end = '';
+    private $end;
+
+    public function __construct($start = '', $end = '') {
+        $this->setStart($start);
+        $this->setEnd($end);
+    }
 
     /**
      * Returns the string to add at start of the value.
