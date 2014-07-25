@@ -15,6 +15,11 @@ class Regexp extends Action implements IRegexp {
 
     private $replacement;
 
+    public function __construct($pattern = null, $replacement = null) {
+        $this->pattern = $pattern;
+        $this->replacement = $replacement;
+    }
+
     /**
      * {@inheritDoc}
      */
