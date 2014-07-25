@@ -19,7 +19,7 @@ class Column implements IColumn {
      */
     private $actions;
 
-    public function __construct($name, $source, $destination) {
+    public function __construct($name = null, $source = null, $destination = null) {
         $this->name = $name;
         $this->source = $source;
         $this->destination = $destination;
@@ -34,6 +34,14 @@ class Column implements IColumn {
     }
 
     /**
+     * Modify the column name.
+     * @param string $name
+     */
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    /**
      * {@inheritDoc}
      */
     public function getSource() {
@@ -41,10 +49,26 @@ class Column implements IColumn {
     }
 
     /**
+     * Modify the source column's name.
+     * @param string $source
+     */
+    public function setSource($source) {
+        $this->source = $source;
+    }
+
+    /**
      * {@inheritDoc}
      */
     public function getDestination() {
         return $this->destination;
+    }
+
+    /**
+     * Modify the destination column's name.
+     * @param string $destination
+     */
+    public function setDestination($destination) {
+        $this->destination = $destination;
     }
 
     /**
