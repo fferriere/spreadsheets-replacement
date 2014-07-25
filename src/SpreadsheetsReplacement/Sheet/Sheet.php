@@ -31,7 +31,7 @@ class Sheet implements ISheet {
      * @param \SpreadsheetsReplacement\Column\IColumn $column the column
      * @param int $priority the priority
      */
-    public function addColumn(IColumn $column, int $priority = 0) {
+    public function addColumn(IColumn $column, $priority = 0) {
         $this->columns->insert($column->getName(), $column, $priority);
     }
 
