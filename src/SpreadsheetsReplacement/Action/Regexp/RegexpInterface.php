@@ -2,13 +2,13 @@
 
 namespace SpreadsheetsReplacement\Action\Regexp;
 
-use SpreadsheetsReplacement\Action\IAction;
+use SpreadsheetsReplacement\Action\ActionInterface;
 
 /**
  *
  * @author florian
  */
-interface IRegexp extends IAction {
+interface RegexpInterface extends ActionInterface {
 
     /**
      * Returns the search pattern for the replacement regexp.

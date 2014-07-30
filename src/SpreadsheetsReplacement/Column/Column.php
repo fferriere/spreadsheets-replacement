@@ -3,9 +3,9 @@
 namespace SpreadsheetsReplacement\Column;
 
 use Zend\Stdlib\PriorityQueue;
-use SpreadsheetsReplacement\Action\IAction;
+use SpreadsheetsReplacement\Action\ActionInterface;
 
-class Column implements IColumn {
+class Column implements ColumnInterface {
 
     private $name;
 
@@ -83,10 +83,10 @@ class Column implements IColumn {
 
     /**
      * Add an action on this column.
-     * @param \SpreadsheetsReplacement\Action\IAction $action the action
+     * @param \SpreadsheetsReplacement\Action\ActionInterface $action the action
      * @param int $priority the priority
      */
-    public function addAction(IAction $action, $priority = 0) {
+    public function addAction(ActionInterface $action, $priority = 0) {
         $this->actions->insert($action, $priority);
     }
 

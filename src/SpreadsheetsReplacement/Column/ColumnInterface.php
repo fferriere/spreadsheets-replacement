@@ -7,7 +7,7 @@ namespace SpreadsheetsReplacement\Column;
  * It's a actions group for on column to rewrite in destination spreadsheet.
  * @author florian
  */
-interface IColumn {
+interface ColumnInterface {
 
     /**
      * Returns the name of the column.

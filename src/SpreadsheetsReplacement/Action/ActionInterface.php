@@ -6,7 +6,7 @@ namespace SpreadsheetsReplacement\Action;
  *
  * @author florian
  */
-interface IAction {
+interface ActionInterface {
 
     /**
      * Replace a value.

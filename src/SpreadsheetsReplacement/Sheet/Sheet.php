@@ -4,9 +4,9 @@ namespace SpreadsheetsReplacement\Sheet;
 
 use SpreadsheetsReplacement\PriorityList;
 
-use SpreadsheetsReplacement\Column\IColumn;
+use SpreadsheetsReplacement\Column\ColumnInterface;
 
-class Sheet implements ISheet {
+class Sheet implements SheetInterface {
 
     /**
      * List of columns
@@ -28,10 +28,10 @@ class Sheet implements ISheet {
 
     /**
      * Add a column into the columns list.
-     * @param \SpreadsheetsReplacement\Column\IColumn $column the column
+     * @param \SpreadsheetsReplacement\Column\ColumnInterface $column the column
      * @param int $priority the priority
      */
-    public function addColumn(IColumn $column, $priority = 0) {
+    public function addColumn(ColumnInterface $column, $priority = 0) {
         $this->columns->insert($column->getName(), $column, $priority);
     }
 

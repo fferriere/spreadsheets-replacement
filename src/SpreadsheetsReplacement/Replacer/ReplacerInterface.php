@@ -2,14 +2,14 @@
 
 namespace SpreadsheetsReplacement\Replacer;
 
-use SpreadsheetsReplacement\Sheet\ISheet;
-use SpreadsheetsReplacement\Converter\IConverter;
+use SpreadsheetsReplacement\Sheet\SheetInterface;
+use SpreadsheetsReplacement\Converter\ConverterInterface;
 
 /**
  *
  * @author florian
  */
-interface IReplacer {
+interface ReplacerInterface {
 
     /**
      * Replaces values in a row.
@@ -20,26 +20,26 @@ interface IReplacer {
 
     /**
      * Returns the sheet.
-     * @return ISheet the sheet
+     * @return SheetInterface the sheet
      */
     public function getSheet();
 
     /**
      * Modify the sheet.
-     * @param ISheet $sheet
+     * @param SheetInterface $sheet
      */
-    public function setSheet(ISheet $sheet);
+    public function setSheet(SheetInterface $sheet);
 
     /**
      * Returns the converter.
-     * @return IConverter the converter
+     * @return ConverterInterface the converter
      */
     public function getConverter();
 
     /**
      * Modify the converter.
-     * @param IConverter $converter the converter
+     * @param ConverterInterface $converter the converter
      */
-    public function setConverter(IConverter $converter);
+    public function setConverter(ConverterInterface $converter);
 
 }

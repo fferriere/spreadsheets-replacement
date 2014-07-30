@@ -6,7 +6,7 @@ namespace SpreadsheetsReplacement\Sheet;
  *
  * @author florian
  */
-interface ISheet {
+interface SheetInterface {
 
     /**
      * Returns list of columns to change or copy.

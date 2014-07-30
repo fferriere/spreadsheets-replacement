@@ -6,7 +6,7 @@ namespace SpreadsheetsReplacement\Converter;
  *
  * @author florian
  */
-interface IConverter {
+interface ConverterInterface {
 
     /**
      * Converts a column name to index in array.

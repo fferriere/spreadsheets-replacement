@@ -9,7 +9,7 @@ use SpreadsheetsReplacement\Action\Action;
  *
  * @author florian
  */
-class Regexp extends Action implements IRegexp {
+class Regexp extends Action implements RegexpInterface {
 
     private $pattern;
 

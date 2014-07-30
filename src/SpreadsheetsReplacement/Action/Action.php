@@ -7,6 +7,6 @@ namespace SpreadsheetsReplacement\Action;
  *
  * @author florian
  */
-abstract class Action implements IAction {
+abstract class Action implements ActionInterface {
 
 }

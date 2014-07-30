@@ -2,34 +2,34 @@
 
 namespace SpreadsheetsReplacement\Replacer;
 
-use SpreadsheetsReplacement\Sheet\ISheet;
-use SpreadsheetsReplacement\Column\IColumn;
-use SpreadsheetsReplacement\Converter\IConverter;
-use SpreadsheetsReplacement\Action\IAction;
+use SpreadsheetsReplacement\Sheet\SheetInterface;
+use SpreadsheetsReplacement\Column\ColumnInterface;
+use SpreadsheetsReplacement\Converter\ConverterInterface;
+use SpreadsheetsReplacement\Action\ActionInterface;
 
 /**
  * Description of Replacer
  *
  * @author florian
  */
- class AbstractReplacer implements IReplacer {
+ class AbstractReplacer implements ReplacerInterface {
 
     /**
-     * @var ISheet
+     * @var SheetInterface
      */
     private $sheet;
 
     /**
-     * @var IColumn[];
+     * @var ColumnInterface[];
      */
     private $columns;
 
     /**
-     * @var IConverter
+     * @var ConverterInterface
      */
     private $converter;
 
-    public function __construct(ISheet $sheet = null, IConverter $converter = null) {
+    public function __construct(SheetInterface $sheet = null, ConverterInterface $converter = null) {
         $this->setSheet($sheet);
         $this->setConverter($converter);
     }
@@ -38,7 +38,7 @@ use SpreadsheetsReplacement\Action\IAction;
      * {@inheritDoc}
      */
     public function getSheet() {
-        if (! $this->sheet instanceof ISheet) {
+        if (! $this->sheet instanceof SheetInterface) {
             throw new \SpreadsheetsReplacement\Exception\DependencyException();
         }
         return $this->sheet;
@@ -48,7 +48,7 @@ use SpreadsheetsReplacement\Action\IAction;
      * {@inheritDoc}
      */
     public function getConverter() {
-        if (! $this->converter instanceof IConverter) {
+        if (! $this->converter instanceof ConverterInterface) {
             throw new \SpreadsheetsReplacement\Exception\DependencyException();
         }
         return $this->converter;
@@ -57,7 +57,7 @@ use SpreadsheetsReplacement\Action\IAction;
     /**
      * {@inheritDoc}
      */
-    public function setSheet(ISheet $sheet) {
+    public function setSheet(SheetInterface $sheet) {
         $this->sheet = $sheet;
         if($this->sheet) {
             $this->columns = $sheet->getColumns();
@@ -67,7 +67,7 @@ use SpreadsheetsReplacement\Action\IAction;
     /**
      * {@inheritDoc}
      */
-    public function setConverter(IConverter $converter) {
+    public function setConverter(ConverterInterface $converter) {
         $this->converter = $converter;
     }
 
@@ -91,12 +91,12 @@ use SpreadsheetsReplacement\Action\IAction;
 
     /**
      * Replace value IColumn by IColumn.
-     * @param \SpreadsheetsReplacement\Column\IColumn $column the column "config" for replacement
+     * @param \SpreadsheetsReplacement\Column\ColumnInterface $column the column "config" for replacement
      * @param array $row the row
      * @return string the value replaced
      * @throws \SpreadsheetsReplacement\Exception\ArrayIndexOutOfBoundException throw this exception when $column->getSource() inexists in row
      */
-    private function replaceByColumn(IColumn $column, $row) {
+    private function replaceByColumn(ColumnInterface $column, $row) {
         $name = $column->getSource();
         $index = $this->getConverter()->convert($name);
         if (!isset($row[$index])) {
@@ -108,11 +108,11 @@ use SpreadsheetsReplacement\Action\IAction;
 
     /**
      * Replace values with actions in column.
-     * @param \SpreadsheetsReplacement\Column\IColumn $column the column contains actions
+     * @param \SpreadsheetsReplacement\Column\ColumnInterface $column the column contains actions
      * @param string $value the value to replace
      * @return string the value replaced
      */
-    private function replaceWithActions(IColumn $column, $value) {
+    private function replaceWithActions(ColumnInterface $column, $value) {
         $actions = $column->getActions();
         foreach($actions as $action) {
             $value = $this->actionReplace($action, $value);
@@ -122,11 +122,11 @@ use SpreadsheetsReplacement\Action\IAction;
 
     /**
      * Replace a value with an IAction.
-     * @param \SpreadsheetsReplacement\Action\IAction $action the IAction
+     * @param \SpreadsheetsReplacement\Action\ActionInterface $action the IAction
      * @param string $value value to replace
      * @return string the value replaced
      */
-    private function actionReplace(IAction $action, $value) {
+    private function actionReplace(ActionInterface $action, $value) {
         return $action->replace($value);
     }
 

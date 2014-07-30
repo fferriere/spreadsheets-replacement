@@ -7,7 +7,7 @@ namespace SpreadsheetsReplacement\Converter;
  *
  * @author florian
  */
-class Converter implements IConverter {
+class Converter implements ConverterInterface {
 
     /**
      * {@inheritDoc}
