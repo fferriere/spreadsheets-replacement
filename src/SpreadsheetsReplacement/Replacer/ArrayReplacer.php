@@ -2,9 +2,6 @@
 
 namespace SpreadsheetsReplacement\Replacer;
 
-use SpreadsheetsReplacement\Sheet\SheetInterface;
-use SpreadsheetsReplacement\Converter\ConverterInterface;
-
 /**
  * Description of ArrayReplacer
  *
@@ -14,7 +11,7 @@ class ArrayReplacer extends AbstractReplacer {
 
     private $results;
 
-    public function __construct(SheetInterface $sheet = null, ConverterInterface $converter = null) {
+    public function __construct($sheet = null, $converter = null) {
         parent::__construct($sheet, $converter);
         $this->clearResults();
     }

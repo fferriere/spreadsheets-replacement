@@ -29,7 +29,7 @@ use SpreadsheetsReplacement\Action\ActionInterface;
      */
     private $converter;
 
-    public function __construct(SheetInterface $sheet = null, ConverterInterface $converter = null) {
+    public function __construct($sheet = null, $converter = null) {
         $this->setSheet($sheet);
         $this->setConverter($converter);
     }
@@ -57,7 +57,10 @@ use SpreadsheetsReplacement\Action\ActionInterface;
     /**
      * {@inheritDoc}
      */
-    public function setSheet(SheetInterface $sheet) {
+    public function setSheet($sheet) {
+        if($sheet && !$sheet instanceof SheetInterface) {
+            throw new \SpreadsheetsReplacement\Exception\DependencyException('sheet must be SheetInterface.');
+        }
         $this->sheet = $sheet;
         if($this->sheet) {
             $this->columns = $sheet->getColumns();
@@ -67,7 +70,10 @@ use SpreadsheetsReplacement\Action\ActionInterface;
     /**
      * {@inheritDoc}
      */
-    public function setConverter(ConverterInterface $converter) {
+    public function setConverter($converter) {
+        if($converter && !$converter instanceof ConverterInterface) {
+            throw new \SpreadsheetsReplacement\Exception\DependencyException('converter must be ConverterInterface.');
+        }
         $this->converter = $converter;
     }
 

@@ -28,7 +28,7 @@ interface ReplacerInterface {
      * Modify the sheet.
      * @param SheetInterface $sheet
      */
-    public function setSheet(SheetInterface $sheet);
+    public function setSheet($sheet);
 
     /**
      * Returns the converter.
@@ -40,6 +40,6 @@ interface ReplacerInterface {
      * Modify the converter.
      * @param ConverterInterface $converter the converter
      */
-    public function setConverter(ConverterInterface $converter);
+    public function setConverter($converter);
 
 }
