@@ -62,9 +62,6 @@ use Fferriere\SpreadsheetsReplacement\Action\ActionInterface;
             throw new \Fferriere\SpreadsheetsReplacement\Exception\DependencyException('sheet must be SheetInterface.');
         }
         $this->sheet = $sheet;
-        if($this->sheet) {
-            $this->columns = $sheet->getColumns();
-        }
     }
 
     /**
@@ -78,16 +75,29 @@ use Fferriere\SpreadsheetsReplacement\Action\ActionInterface;
     }
 
     /**
+     * Returns columns list.
+     * @return ColumnInterface[]
+     */
+    protected function getColumns() {
+        if(!$this->columns instanceof \Iterator
+                && $this->sheet instanceof SheetInterface) {
+            $this->columns = $this->sheet->getColumns();
+        }
+        return $this->columns;
+    }
+
+    /**
      * Replaces values in a row.
      * @param array $row
      * @param array result;
      */
     public function replaceRow($row) {
-        if(empty($this->columns)) {
+        $columns = $this->getColumns();
+        if(empty($columns)) {
             throw new \Fferriere\SpreadsheetsReplacement\Exception\DependencyException('There are no columns.');
         }
         $result = array();
-        foreach($this->columns as $column) {
+        foreach($columns as $column) {
             $value = $this->replaceByColumn($column, $row);
             $dest = $this->getConverter()->convert($column->getDestination());
             $result[$dest] = $value;
