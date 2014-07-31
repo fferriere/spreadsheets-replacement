@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Replacer;
+namespace Fferriere\SpreadsheetsReplacement\Replacer;
 
 /**
  * Description of ArrayReplacer

@@ -1,11 +1,11 @@
 <?php
 
-namespace SpreadsheetsReplacement\Replacer;
+namespace Fferriere\SpreadsheetsReplacement\Replacer;
 
-use SpreadsheetsReplacement\Sheet\SheetInterface;
-use SpreadsheetsReplacement\Column\ColumnInterface;
-use SpreadsheetsReplacement\Converter\ConverterInterface;
-use SpreadsheetsReplacement\Action\ActionInterface;
+use Fferriere\SpreadsheetsReplacement\Sheet\SheetInterface;
+use Fferriere\SpreadsheetsReplacement\Column\ColumnInterface;
+use Fferriere\SpreadsheetsReplacement\Converter\ConverterInterface;
+use Fferriere\SpreadsheetsReplacement\Action\ActionInterface;
 
 /**
  * Description of Replacer
@@ -39,7 +39,7 @@ use SpreadsheetsReplacement\Action\ActionInterface;
      */
     public function getSheet() {
         if (! $this->sheet instanceof SheetInterface) {
-            throw new \SpreadsheetsReplacement\Exception\DependencyException();
+            throw new \Fferriere\SpreadsheetsReplacement\Exception\DependencyException();
         }
         return $this->sheet;
     }
@@ -49,7 +49,7 @@ use SpreadsheetsReplacement\Action\ActionInterface;
      */
     public function getConverter() {
         if (! $this->converter instanceof ConverterInterface) {
-            throw new \SpreadsheetsReplacement\Exception\DependencyException();
+            throw new \Fferriere\SpreadsheetsReplacement\Exception\DependencyException();
         }
         return $this->converter;
     }
@@ -59,7 +59,7 @@ use SpreadsheetsReplacement\Action\ActionInterface;
      */
     public function setSheet($sheet) {
         if($sheet && !$sheet instanceof SheetInterface) {
-            throw new \SpreadsheetsReplacement\Exception\DependencyException('sheet must be SheetInterface.');
+            throw new \Fferriere\SpreadsheetsReplacement\Exception\DependencyException('sheet must be SheetInterface.');
         }
         $this->sheet = $sheet;
         if($this->sheet) {
@@ -72,7 +72,7 @@ use SpreadsheetsReplacement\Action\ActionInterface;
      */
     public function setConverter($converter) {
         if($converter && !$converter instanceof ConverterInterface) {
-            throw new \SpreadsheetsReplacement\Exception\DependencyException('converter must be ConverterInterface.');
+            throw new \Fferriere\SpreadsheetsReplacement\Exception\DependencyException('converter must be ConverterInterface.');
         }
         $this->converter = $converter;
     }
@@ -84,7 +84,7 @@ use SpreadsheetsReplacement\Action\ActionInterface;
      */
     public function replaceRow($row) {
         if(empty($this->columns)) {
-            throw new \SpreadsheetsReplacement\Exception\DependencyException('There are no columns.');
+            throw new \Fferriere\SpreadsheetsReplacement\Exception\DependencyException('There are no columns.');
         }
         $result = array();
         foreach($this->columns as $column) {
@@ -97,16 +97,16 @@ use SpreadsheetsReplacement\Action\ActionInterface;
 
     /**
      * Replace value IColumn by IColumn.
-     * @param \SpreadsheetsReplacement\Column\ColumnInterface $column the column "config" for replacement
+     * @param \Fferriere\SpreadsheetsReplacement\Column\ColumnInterface $column the column "config" for replacement
      * @param array $row the row
      * @return string the value replaced
-     * @throws \SpreadsheetsReplacement\Exception\ArrayIndexOutOfBoundException throw this exception when $column->getSource() inexists in row
+     * @throws \Fferriere\SpreadsheetsReplacement\Exception\ArrayIndexOutOfBoundException throw this exception when $column->getSource() inexists in row
      */
     private function replaceByColumn(ColumnInterface $column, $row) {
         $name = $column->getSource();
         $index = $this->getConverter()->convert($name);
         if (!isset($row[$index])) {
-            throw new \SpreadsheetsReplacement\Exception\ArrayIndexOutOfBoundException('Index '.$index.' is too long.');
+            throw new \Fferriere\SpreadsheetsReplacement\Exception\ArrayIndexOutOfBoundException('Index '.$index.' is too long.');
         }
         $value = $row[$index];
         return $this->replaceWithActions($column, $value);
@@ -114,7 +114,7 @@ use SpreadsheetsReplacement\Action\ActionInterface;
 
     /**
      * Replace values with actions in column.
-     * @param \SpreadsheetsReplacement\Column\ColumnInterface $column the column contains actions
+     * @param \Fferriere\SpreadsheetsReplacement\Column\ColumnInterface $column the column contains actions
      * @param string $value the value to replace
      * @return string the value replaced
      */
@@ -128,7 +128,7 @@ use SpreadsheetsReplacement\Action\ActionInterface;
 
     /**
      * Replace a value with an IAction.
-     * @param \SpreadsheetsReplacement\Action\ActionInterface $action the IAction
+     * @param \Fferriere\SpreadsheetsReplacement\Action\ActionInterface $action the IAction
      * @param string $value value to replace
      * @return string the value replaced
      */

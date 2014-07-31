@@ -9,7 +9,7 @@
         }
     ],
     "autoload": {
-        "psr-0": { "SpreadsheetsReplacement\\": "src/" }
+        "psr-0": { "Fferriere\\SpreadsheetsReplacement\\": "src/" }
     },
     "require": {
         "php": ">=5.4",

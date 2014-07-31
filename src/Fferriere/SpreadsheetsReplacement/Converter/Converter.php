@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Converter;
+namespace Fferriere\SpreadsheetsReplacement\Converter;
 
 /**
  * Description of Converter

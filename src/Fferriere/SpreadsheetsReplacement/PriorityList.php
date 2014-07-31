@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement;
+namespace Fferriere\SpreadsheetsReplacement;
 
 use Zend\Stdlib\PriorityList as ZendPriorityList;
 

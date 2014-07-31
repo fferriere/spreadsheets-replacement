@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Sheet;
+namespace Fferriere\SpreadsheetsReplacement\Sheet;
 
 /**
  * Description of CsvSheet
@@ -168,11 +168,11 @@ class CsvSheet extends Sheet {
 
     /**
      * Open readed file.
-     * @throws \SpreadsheetsReplacement\Exception\FileNotFoundException if file not found
+     * @throws \Fferriere\SpreadsheetsReplacement\Exception\FileNotFoundException if file not found
      */
     protected function openRead() {
         if (!is_file($this->readFilepath)) {
-            throw new \SpreadsheetsReplacement\Exception\FileNotFoundException($this->readFilepath . ' not found');
+            throw new \Fferriere\SpreadsheetsReplacement\Exception\FileNotFoundException($this->readFilepath . ' not found');
         }
         $this->readFileHandle = fopen($this->readFilepath, 'r');
     }

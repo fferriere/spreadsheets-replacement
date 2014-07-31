@@ -1,10 +1,10 @@
 <?php
 
-namespace SpreadsheetsReplacement\Sheet;
+namespace Fferriere\SpreadsheetsReplacement\Sheet;
 
-use SpreadsheetsReplacement\PriorityList;
+use Fferriere\SpreadsheetsReplacement\PriorityList;
 
-use SpreadsheetsReplacement\Column\ColumnInterface;
+use Fferriere\SpreadsheetsReplacement\Column\ColumnInterface;
 
 class Sheet implements SheetInterface {
 
@@ -28,7 +28,7 @@ class Sheet implements SheetInterface {
 
     /**
      * Add a column into the columns list.
-     * @param \SpreadsheetsReplacement\Column\ColumnInterface $column the column
+     * @param \Fferriere\SpreadsheetsReplacement\Column\ColumnInterface $column the column
      * @param int $priority the priority
      */
     public function addColumn(ColumnInterface $column, $priority = 0) {

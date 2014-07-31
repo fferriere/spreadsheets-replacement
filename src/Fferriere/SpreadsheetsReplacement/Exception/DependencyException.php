@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Exception;
+namespace Fferriere\SpreadsheetsReplacement\Exception;
 
 /**
  * Description of DependencyException

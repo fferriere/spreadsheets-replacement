@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Action\Regexp\tests\units;
+namespace Fferriere\SpreadsheetsReplacement\Action\Regexp\tests\units;
 
 // / tests / src / SpreadsheetsReplacement / Action / Regexp / Regexp
 require_once dirname(dirname(dirname(dirname(dirname(__DIR__))))).'/vendor/autoload.php';
@@ -15,7 +15,7 @@ use atoum;
 class Regexp extends atoum {
 
     public function testReplace() {
-        $action = new \SpreadsheetsReplacement\Action\Regexp\Regexp();
+        $action = new \Fferriere\SpreadsheetsReplacement\Action\Regexp\Regexp();
         $action->setPattern('#^411(.*)$#');
         $action->setReplacement('CL$1');
         $subject = '411000030';
@@ -25,7 +25,7 @@ class Regexp extends atoum {
     }
 
     public function testConcatenation() {
-        $action = new \SpreadsheetsReplacement\Action\Regexp\Regexp();
+        $action = new \Fferriere\SpreadsheetsReplacement\Action\Regexp\Regexp();
         $action->setPattern('#^(.*)$#');
         $action->setReplacement('re$0r');
         $subject = 'programme';

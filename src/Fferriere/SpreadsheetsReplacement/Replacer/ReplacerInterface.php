@@ -1,9 +1,9 @@
 <?php
 
-namespace SpreadsheetsReplacement\Replacer;
+namespace Fferriere\SpreadsheetsReplacement\Replacer;
 
-use SpreadsheetsReplacement\Sheet\SheetInterface;
-use SpreadsheetsReplacement\Converter\ConverterInterface;
+use Fferriere\SpreadsheetsReplacement\Sheet\SheetInterface;
+use Fferriere\SpreadsheetsReplacement\Converter\ConverterInterface;
 
 /**
  *

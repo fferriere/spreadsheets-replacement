@@ -1,9 +1,9 @@
 <?php
 
-namespace SpreadsheetsReplacement\Column;
+namespace Fferriere\SpreadsheetsReplacement\Column;
 
 use Zend\Stdlib\PriorityQueue;
-use SpreadsheetsReplacement\Action\ActionInterface;
+use Fferriere\SpreadsheetsReplacement\Action\ActionInterface;
 
 class Column implements ColumnInterface {
 
@@ -83,7 +83,7 @@ class Column implements ColumnInterface {
 
     /**
      * Add an action on this column.
-     * @param \SpreadsheetsReplacement\Action\ActionInterface $action the action
+     * @param \Fferriere\SpreadsheetsReplacement\Action\ActionInterface $action the action
      * @param int $priority the priority
      */
     public function addAction(ActionInterface $action, $priority = 0) {

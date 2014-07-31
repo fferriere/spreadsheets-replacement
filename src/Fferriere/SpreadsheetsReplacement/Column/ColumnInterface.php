@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Column;
+namespace Fferriere\SpreadsheetsReplacement\Column;
 
 /**
  * Interface of Column for the replacement.

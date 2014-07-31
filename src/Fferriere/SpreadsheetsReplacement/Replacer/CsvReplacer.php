@@ -1,9 +1,9 @@
 <?php
 
-namespace SpreadsheetsReplacement\Replacer;
+namespace Fferriere\SpreadsheetsReplacement\Replacer;
 
-use SpreadsheetsReplacement\Sheet\CsvSheet;
-use SpreadsheetsReplacement\Exception\DependencyException;
+use Fferriere\SpreadsheetsReplacement\Sheet\CsvSheet;
+use Fferriere\SpreadsheetsReplacement\Exception\DependencyException;
 
 /**
  * Description of CsvReplacer
@@ -26,7 +26,7 @@ class CsvReplacer extends AbstractReplacer {
      */
     public function setSheet($sheet) {
         if($sheet != null && !$sheet instanceof CsvSheet) {
-            throw new DependencyException('The sheet must be an instance of \SpreadsheetsReplacement\Sheet\CsvSheet.');
+            throw new DependencyException('The sheet must be an instance of \Fferriere\SpreadsheetsReplacement\Sheet\CsvSheet.');
         }
         parent::setSheet($sheet);
     }

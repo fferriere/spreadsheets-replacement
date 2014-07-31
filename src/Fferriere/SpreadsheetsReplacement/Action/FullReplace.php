@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Action;
+namespace Fferriere\SpreadsheetsReplacement\Action;
 
 /**
  * Description of FullReplace

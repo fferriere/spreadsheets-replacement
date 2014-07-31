@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Sheet;
+namespace Fferriere\SpreadsheetsReplacement\Sheet;
 
 /**
  *

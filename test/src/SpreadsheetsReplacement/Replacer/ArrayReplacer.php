@@ -1,16 +1,16 @@
 <?php
 
-namespace SpreadsheetsReplacement\Replacer\tests\units;
+namespace Fferriere\SpreadsheetsReplacement\Replacer\tests\units;
 
 // / tests / src / SpreadsheetsReplacement / Replacer / ArrayReplacer
 require_once dirname(dirname(dirname(dirname(__DIR__)))).'/vendor/autoload.php';
 
 use atoum;
 
-use SpreadsheetsReplacement\Action;
-use SpreadsheetsReplacement\Converter\Converter;
-use SpreadsheetsReplacement\Column\Column;
-use SpreadsheetsReplacement\Sheet\Sheet;
+use Fferriere\SpreadsheetsReplacement\Action;
+use Fferriere\SpreadsheetsReplacement\Converter\Converter;
+use Fferriere\SpreadsheetsReplacement\Column\Column;
+use Fferriere\SpreadsheetsReplacement\Sheet\Sheet;
 
 /**
  * Test class for ArrayReplacer.
@@ -55,7 +55,7 @@ class ArrayReplacer extends atoum {
         $column = new Column('G', 'H');
         $sheet->addColumn($column);
 
-        $replacer = new \SpreadsheetsReplacement\Replacer\ArrayReplacer($sheet, $convert);
+        $replacer = new \Fferriere\SpreadsheetsReplacement\Replacer\ArrayReplacer($sheet, $convert);
 
         $rows = array(
             array(

@@ -1,8 +1,8 @@
 <?php
 
-namespace SpreadsheetsReplacement\Action\Regexp;
+namespace Fferriere\SpreadsheetsReplacement\Action\Regexp;
 
-use SpreadsheetsReplacement\Action\Action;
+use Fferriere\SpreadsheetsReplacement\Action\Action;
 
 /**
  * Action to modify column's value with preg_replace.

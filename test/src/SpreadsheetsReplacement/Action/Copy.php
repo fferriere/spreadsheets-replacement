@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Action\tests\units;
+namespace Fferriere\SpreadsheetsReplacement\Action\tests\units;
 
 // / tests / src / SpreadsheetsReplacement / Action / Copy
 require_once dirname(dirname(dirname(dirname(__DIR__)))).'/vendor/autoload.php';
@@ -15,7 +15,7 @@ use mageekguy\atoum;
 class Copy extends atoum\test {
 
     public function testReplace() {
-        $action = new \SpreadsheetsReplacement\Action\Copy();
+        $action = new \Fferriere\SpreadsheetsReplacement\Action\Copy();
         $value = 'spreadsheets';
         $this->variable($value)
                 ->isEqualTo($action->replace($value));

@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Converter\tests\units;
+namespace Fferriere\SpreadsheetsReplacement\Converter\tests\units;
 
 
 // / tests / src / SpreadsheetsReplacement / Converter / Converter
@@ -56,7 +56,7 @@ class Converter extends atoum {
             'AC 54 R5' => 28
         );
 
-        $converter = new \SpreadsheetsReplacement\Converter\Converter();
+        $converter = new \Fferriere\SpreadsheetsReplacement\Converter\Converter();
 
         foreach($data as $letter => $result) {
             $this->variable($result)

@@ -1,8 +1,8 @@
 <?php
 
-namespace SpreadsheetsReplacement\Action\Regexp;
+namespace Fferriere\SpreadsheetsReplacement\Action\Regexp;
 
-use SpreadsheetsReplacement\Action\ActionInterface;
+use Fferriere\SpreadsheetsReplacement\Action\ActionInterface;
 
 /**
  *

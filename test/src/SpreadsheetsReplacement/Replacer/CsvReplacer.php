@@ -1,6 +1,6 @@
 <?php
 
-namespace SpreadsheetsReplacement\Replacer\tests\units;
+namespace Fferriere\SpreadsheetsReplacement\Replacer\tests\units;
 
 // / tests / src / SpreadsheetsReplacement / Replacer / CsvReplacer
 require_once dirname(dirname(dirname(dirname(__DIR__)))).'/vendor/autoload.php';
@@ -8,10 +8,10 @@ require_once dirname(dirname(dirname(dirname(__DIR__)))).'/vendor/autoload.php';
 use atoum;
 
 
-use SpreadsheetsReplacement\Action;
-use SpreadsheetsReplacement\Converter\Converter;
-use SpreadsheetsReplacement\Column\Column;
-use SpreadsheetsReplacement\Sheet;
+use Fferriere\SpreadsheetsReplacement\Action;
+use Fferriere\SpreadsheetsReplacement\Converter\Converter;
+use Fferriere\SpreadsheetsReplacement\Column\Column;
+use Fferriere\SpreadsheetsReplacement\Sheet;
 
 /**
  * Test class for CsvReplacer.
@@ -22,13 +22,13 @@ class CsvReplacer extends atoum {
 
     public function testDependencyException() {
         $sheet = new Sheet\Sheet();
-        $replacer = new \SpreadsheetsReplacement\Replacer\CsvReplacer();
+        $replacer = new \Fferriere\SpreadsheetsReplacement\Replacer\CsvReplacer();
         $this->exception(
                 function() use ($replacer, $sheet) {
                     $replacer->setSheet($sheet);
                 }
             )
-                ->isInstanceOf('\SpreadsheetsReplacement\Exception\DependencyException');
+                ->isInstanceOf('\Fferriere\SpreadsheetsReplacement\Exception\DependencyException');
     }
 
     public function testReplace() {
@@ -74,7 +74,7 @@ class CsvReplacer extends atoum {
         $column = new Column('G', 'H');
         $sheet->addColumn($column);
 
-        $replacer = new \SpreadsheetsReplacement\Replacer\CsvReplacer($sheet, $convert);
+        $replacer = new \Fferriere\SpreadsheetsReplacement\Replacer\CsvReplacer($sheet, $convert);
         $myResultFile = $replacer->replaceFile();
 
         $md5Result = md5_file($myResultFile);
