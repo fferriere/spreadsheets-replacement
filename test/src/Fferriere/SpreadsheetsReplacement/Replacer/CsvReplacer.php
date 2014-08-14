@@ -2,8 +2,8 @@
 
 namespace Fferriere\SpreadsheetsReplacement\Replacer\tests\units;
 
-// / tests / src / SpreadsheetsReplacement / Replacer / CsvReplacer
-require_once dirname(dirname(dirname(dirname(__DIR__)))).'/vendor/autoload.php';
+// / tests / src / Fferriere / SpreadsheetsReplacement / Replacer / CsvReplacer
+require_once dirname(dirname(dirname(dirname(dirname(__DIR__))))).'/vendor/autoload.php';
 
 use atoum;
 
@@ -33,8 +33,8 @@ class CsvReplacer extends atoum {
 
     public function testReplace() {
 
-        // ./ test / src / SpreadsheetsReplacement / Replacer / CsvReplacer.php
-        $dataPath = dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR .'data';
+        // ./ test / src / Fferriere / SpreadsheetsReplacement / Replacer / CsvReplacer.php
+        $dataPath = dirname(dirname(dirname(dirname(__DIR__)))) . DIRECTORY_SEPARATOR .'data';
         $srcPath = $dataPath . DIRECTORY_SEPARATOR . 'source.txt';
         $resultPath = $dataPath . DIRECTORY_SEPARATOR . 'source-result.txt';
         $dstPath = $dataPath . DIRECTORY_SEPARATOR . 'destination.txt';

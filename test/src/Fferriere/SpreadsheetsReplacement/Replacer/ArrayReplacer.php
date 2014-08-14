@@ -2,8 +2,8 @@
 
 namespace Fferriere\SpreadsheetsReplacement\Replacer\tests\units;
 
-// / tests / src / SpreadsheetsReplacement / Replacer / ArrayReplacer
-require_once dirname(dirname(dirname(dirname(__DIR__)))).'/vendor/autoload.php';
+// / tests / src / Fferriere / SpreadsheetsReplacement / Replacer / ArrayReplacer
+require_once dirname(dirname(dirname(dirname(dirname(__DIR__))))).'/vendor/autoload.php';
 
 use atoum;
 

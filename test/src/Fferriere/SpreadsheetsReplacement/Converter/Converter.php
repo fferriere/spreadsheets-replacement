@@ -3,8 +3,8 @@
 namespace Fferriere\SpreadsheetsReplacement\Converter\tests\units;
 
 
-// / tests / src / SpreadsheetsReplacement / Converter / Converter
-require_once dirname(dirname(dirname(dirname(__DIR__)))).'/vendor/autoload.php';
+// / tests / src / Fferriere / SpreadsheetsReplacement / Converter / Converter
+require_once dirname(dirname(dirname(dirname(dirname(__DIR__))))).'/vendor/autoload.php';
 
 use atoum;
 

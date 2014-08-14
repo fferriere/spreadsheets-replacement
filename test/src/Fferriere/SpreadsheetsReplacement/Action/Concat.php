@@ -2,8 +2,8 @@
 
 namespace Fferriere\SpreadsheetsReplacement\Action\tests\units;
 
-// / tests / src / SpreadsheetsReplacement / Action / Concat
-require_once dirname(dirname(dirname(dirname(__DIR__)))).'/vendor/autoload.php';
+// / tests / src / Fferriere / SpreadsheetsReplacement / Action / Concat
+require_once dirname(dirname(dirname(dirname(dirname(__DIR__))))).'/vendor/autoload.php';
 
 use atoum;
 

@@ -2,8 +2,8 @@
 
 namespace Fferriere\SpreadsheetsReplacement\Action\Regexp\tests\units;
 
-// / tests / src / SpreadsheetsReplacement / Action / Regexp / Regexp
-require_once dirname(dirname(dirname(dirname(dirname(__DIR__))))).'/vendor/autoload.php';
+// / tests / src / Fferriere / SpreadsheetsReplacement / Action / Regexp / Regexp
+require_once dirname(dirname(dirname(dirname(dirname(dirname(__DIR__)))))).'/vendor/autoload.php';
 
 use atoum;
 
