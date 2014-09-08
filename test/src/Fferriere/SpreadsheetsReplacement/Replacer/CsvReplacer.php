@@ -87,4 +87,34 @@ class CsvReplacer extends atoum {
 
     }
 
+    public function testReplaceWithHydrator() {
+
+        // ./ test / src / Fferriere / SpreadsheetsReplacement / Replacer / CsvReplacer.php
+        $dataPath = dirname(dirname(dirname(dirname(__DIR__)))) . DIRECTORY_SEPARATOR .'data';
+        $srcPath = $dataPath . DIRECTORY_SEPARATOR . 'source.txt';
+        $resultPath = $dataPath . DIRECTORY_SEPARATOR . 'source-result.txt';
+        $dstPath = $dataPath . DIRECTORY_SEPARATOR . 'destination.txt';
+
+        $convert = new Converter();
+        $sheet = new Sheet\CsvSheet($srcPath);
+
+        $params = include $dataPath . DIRECTORY_SEPARATOR . 'config.php';
+        $hydrator = new \Fferriere\SpreadsheetsReplacement\Hydrator\Hydrator();
+
+        $columns = $hydrator->hydrate($params);
+        $sheet->addColumns($columns);
+
+        $replacer = new \Fferriere\SpreadsheetsReplacement\Replacer\CsvReplacer($sheet, $convert);
+        $myResultFile = $replacer->replaceFile();
+
+        $md5Result = md5_file($myResultFile);
+        $md5Dst = md5_file($dstPath);
+
+        $this->variable($resultPath)
+                ->isEqualTo($myResultFile)
+            ->variable($md5Dst)
+                ->isEqualTo($md5Result);
+
+    }
+
 }

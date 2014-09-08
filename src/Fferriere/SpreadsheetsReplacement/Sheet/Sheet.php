@@ -43,5 +43,18 @@ class Sheet implements SheetInterface {
         $this->columns->remove($name);
     }
 
+    /**
+     * Add several column at sheet.
+     * @param array<ColumnInterface> $columns columns
+     */
+    public function addColumns($columns) {
+        for($i = 0, $size = count($columns); $i < $size; $i++) {
+            $column = $columns[$i];
+            if($column instanceof ColumnInterface) {
+                $this->addColumn($column);
+            }
+        }
+    }
+
 }
 

@@ -13,7 +13,9 @@
     },
     "require": {
         "php": ">=5.4",
-        "zendframework/zend-stdlib": "2.3.x"
+        "zendframework/zend-stdlib": "2.3.x",
+        "zendframework/zend-filter": "2.3.x",
+        "zendframework/zend-servicemanager": "2.3.x"
     },
     "require-dev": {
         "atoum/atoum": "dev-master"
