@@ -53,7 +53,7 @@ class CsvReplacer extends atoum {
         $column = new Column('D', 'C');
         $column->addAction(new Action\StrReplace('447510001', '4457101'));
         $column->addAction(new Action\Regexp\Regexp('#^411(.)*$#', '4110000'));
-        $column->addAction(new Action\Regexp\Regexp('#^7(.{4}).*(.{2})$$#', '7$1$2'));
+        $column->addAction(new Action\Regexp\Regexp('#^7(.{4}).*(.{2})$#', '7$1$2'));
         $sheet->addColumn($column);
 
         $column = new Column('D', 'D', 'D1');
