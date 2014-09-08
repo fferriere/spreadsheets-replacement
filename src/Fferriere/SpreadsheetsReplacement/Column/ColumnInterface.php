@@ -2,6 +2,8 @@
 
 namespace Fferriere\SpreadsheetsReplacement\Column;
 
+use Fferriere\SpreadsheetsReplacement\Action\ActionInterface;
+
 /**
  * Interface of Column for the replacement.
  * It's a actions group for on column to rewrite in destination spreadsheet.
@@ -35,5 +37,12 @@ interface ColumnInterface {
      * @return \IteratorAggregate the list of IAction
      */
     public function getActions();
+
+    /**
+     * Add an action on this column.
+     * @param \Fferriere\SpreadsheetsReplacement\Action\ActionInterface $action the action
+     * @param int $priority the priority
+     */
+    public function addAction(ActionInterface $action, $priority = 0);
 
 }

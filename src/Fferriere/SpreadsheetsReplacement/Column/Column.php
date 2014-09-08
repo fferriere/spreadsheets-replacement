@@ -82,9 +82,7 @@ class Column implements ColumnInterface {
     }
 
     /**
-     * Add an action on this column.
-     * @param \Fferriere\SpreadsheetsReplacement\Action\ActionInterface $action the action
-     * @param int $priority the priority
+     * {@inheritDoc}
      */
     public function addAction(ActionInterface $action, $priority = 0) {
         $this->actions->insert($action, $priority);
