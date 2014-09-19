@@ -25,7 +25,7 @@ class CsvSheet extends Sheet {
     protected $csvWriteDelimiter = ';';
     protected $csvWriteEnclosure = '"';
 
-    public function __construct($readFilepath) {
+    public function __construct($readFilepath = null) {
         parent::__construct();
         $this->readFilepath = $readFilepath;
     }
@@ -36,6 +36,14 @@ class CsvSheet extends Sheet {
      */
     public function getReadFilepath() {
         return $this->readFilepath;
+    }
+
+    /**
+     * Changes the read file's path.
+     * @param string $readFilePath the path
+     */
+    public function setReadFilePath($readFilePath) {
+        $this->readFilepath = (string) $readFilePath;
     }
 
     /**
@@ -50,6 +58,9 @@ class CsvSheet extends Sheet {
      * Initialize the write filepath with add -result before file extension.
      */
     private function initWriteFilePath() {
+        if (!is_file($this->readFilepath)) {
+            throw new \Fferriere\SpreadsheetsReplacement\Exception\FileNotFoundException($this->readFilepath . ' not found');
+        }
         $parts = pathinfo($this->readFilepath);
         $this->writeFilepath = $parts['dirname'] . DIRECTORY_SEPARATOR
                              . $parts['filename'] . '-result.'
